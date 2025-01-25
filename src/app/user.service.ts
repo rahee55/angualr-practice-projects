@@ -7,9 +7,9 @@ import { User } from './models/user';
 export class UserService {
 
   users: User[] = [
-    new User('Steve Smith', 'Male', 'Monthly', 'Active'),
-    new User('Mery Jane', 'Female', 'Yearly', 'Inactive'), 
-    new User('Mark Tyler', 'Male', 'Quaterly', 'Active') 
+    new User('Asad Ali', 'Male', 'Monthly', 'Active'),
+    new User('Heera Asad', 'Female', 'Yearly', 'Active'), 
+    new User('Jahanzaib', 'Male', 'Quaterly', 'Inactive') 
   ];
   constructor() { }
 

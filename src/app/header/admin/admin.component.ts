@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { UserService } from './../../user.service';
+import { Component, inject, Inject } from '@angular/core';
 import { UserListComponent } from './user-list/user-list.component';
-import { UserService } from '../../user.service';
 import { FormsModule } from '@angular/forms'
 
 @Component({
@@ -8,12 +8,14 @@ import { FormsModule } from '@angular/forms'
   imports: [UserListComponent,FormsModule],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css',
+  // providers: [{provide: 'USER-SERVICE', useClass: UserService}]
   providers: [UserService]
 })
 export class AdminComponent {
-  constructor( private userService: UserService){
+  // constructor(@Inject('USER-SERVICE') private userService: UserService){
 
-  }
+  // }
+  private userService: UserService = inject(UserService)
 
   name: string = '';
   gender: string = 'Male';

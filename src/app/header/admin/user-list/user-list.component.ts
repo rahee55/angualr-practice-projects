@@ -1,5 +1,5 @@
 import { UserService } from './../../../user.service';
-import { Component } from '@angular/core';
+import { Component, inject, Inject } from '@angular/core';
 import { User } from '../../../models/user';
 import { CommonModule } from '@angular/common';
 
@@ -10,8 +10,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './user-list.component.css',
 })
 export class UserListComponent {
-  constructor( private userService: UserService){}
-
+  // constructor(@Inject('USER-SERVICE') private userService: UserService){}
+  private userService: UserService = inject(UserService)
   userList: User[] = [];
   ngOnInit() {
     this.userList = this.userService.GetAllUsers();
